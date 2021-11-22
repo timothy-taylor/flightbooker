@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  departuretime: 2021-11-22 09:46:13
+  duration: 1
+
+two:
+  departuretime: 2021-11-22 09:46:13
+  duration: 1
