@@ -1,0 +1,12 @@
+/* app/javascript/stylesheets/application.scss */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+/* Add any custom CSS here */
+@import "tailwindcss/utilities";
+
+@layer base {
+    button {
+        @apply bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow;
+    }
+}

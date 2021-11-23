@@ -1,0 +1,8 @@
+<div class="w-4/5 p-2 border-2 border-solid">
+  <h3 class="m-4">Available Flights</h3>
+  <ul class="px-4">
+    <% flights.each do |flight| %>
+      <li class="p-1"><%= flight.fmt_time_display %>: <%= flight.departure_airport.code %> to <%= flight.arrival_airport.code %> | <%= flight.duration / 60 %> hour, <%= flight.duration % 60 %> minute long flight</li>
+    <% end %>
+  </ul>
+</div>
