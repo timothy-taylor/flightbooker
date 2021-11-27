@@ -1,0 +1,23 @@
+<div class="flex flex-row">
+  <%= render 'flights/search' %>
+  <div class="w-4/5 p-2 bg-white border-2 border-solid">
+    <div class="px-6">
+      <h2 class="py-2">Flight <%= @booking.flight_id %></h3>
+      <h3>Passengers:</h3>
+      <ul class="list-disc list-inside">
+        <% flight = Flight.find(@booking.flight_id) %>
+        <% @booking.passengers.each do |passenger| %>
+          <li><%= passenger.name %></li>
+        <% end %>
+      </ul>
+      <div class="py-2"></div>
+      <h3>Flight:</h3> 
+      <ul class="list-disc list-inside">
+        <li><%= flight.departure_airport.code %> to <%= flight.arrival_airport.code %></li>
+        <li><%= flight.fmt_time_display %></li>
+        <li><%= flight.duration %> minutes</li>
+      </ul>
+      <div class="py-2"></div>
+    </div>
+  </div>
+</div>

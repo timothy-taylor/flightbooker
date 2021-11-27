@@ -1,6 +1,7 @@
+<div class="flex flex-col p-2 ">
+<h1 class="p-4 font-mono text-center">Flights, etc</h1>
 <%= form_with url: flights_path, method: "get", local: true do |form| %>
-  <h3 class="py-2 m-4">Search for Flights:</h3>
-  <div class="flex flex-col p-2 place-content-center">
+  <h3 class="">Search for Flights:</h3>
     <div class="py-2">
       <%= form.label :departure_airport, "Origin:" %>
       <%= form.collection_select :departure_airport, 
@@ -15,19 +16,7 @@
         include_blank: '' %>
     </div>
 
-    <div class="py-2">
-      <%= form.label :departure_time, "Date:" %>
-      <%= form.collection_select :departure_time,
-        Flight.order(:departure_time), :fmt_time_param, :fmt_time_search,
-        include_blank: '' %>
-    </div>
-
-    <div class="py-2">
-      <%= form.label :number_passengers, "Passengers:" %>
-      <%= form.select :number_passengers, [1,2,3,4] %>
-    </div>
-
-    <div class="py-2 m-2">
+    <div class="py-2 m-2 grid place-items-center">
       <%= form.button("Search flights") %>
     </div>
   </div>

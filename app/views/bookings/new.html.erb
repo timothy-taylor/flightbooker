@@ -1,0 +1,28 @@
+<div class="flex flex-row">
+  <%= render 'flights/search' %>
+
+  <div class="w-4/5 p-2 bg-white border-2 border-solid">
+    <h2 class="mx-8 my-4">Booking</h2>
+    <%= form_with model: @booking, local: true do |form| %>
+      <div class="flex flex-col py-2 place-content-center">
+        <%= form.hidden_field :flight_id, value: @flight_id %>
+        <% i = 1 %>
+        <%= form.fields_for :passengers do |passenger_form| %>
+          <%= passenger_form.hidden_field :id, value: nil %>
+          <div class="py-2 mx-8">
+            <%= passenger_form.label :name, "Passenger #{i} Name:" %>
+            <%= passenger_form.text_field :name %>
+          </div>
+          <div class="mx-8">
+          <%= passenger_form.label :email, "Passenger #{i} Email:" %>
+          <%= passenger_form.email_field :email %>
+          </div>
+          <% i += 1 %>
+        <% end %>
+      <div class="py-2 mx-8">
+        <%= form.button("Confirm booking") %>
+      </div>
+      <a href="/" class="mx-8"><button>Cancel</button></a>
+    </div>
+  <% end %>
+</div>
