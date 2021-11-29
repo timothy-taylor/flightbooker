@@ -4,7 +4,6 @@ class Flight < ApplicationRecord
   has_many :bookings
   has_many :passengers, through: :bookings
 
-  
   def fmt_time_display
     departure_time.strftime("%m/%d/%Y %I:%M %p")
   end
