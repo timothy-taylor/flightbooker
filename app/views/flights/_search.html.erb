@@ -1,7 +1,7 @@
-<div class="flex flex-col p-2 ">
+<div class="flex flex-col p-2 bg-purple-100">
 <h1 class="p-4 font-mono text-center">Flights, etc</h1>
-<%= form_with url: flights_path, method: "get", local: true do |form| %>
-  <h3 class="">Search for Flights:</h3>
+<%= form_with url: flights_path, method: "get", local: true, class: "text-center md:text-left" do |form| %>
+  <h3 class="font-light">Search for Flights:</h3>
     <div class="py-2">
       <%= form.label :departure_airport, "Origin:" %>
       <%= form.collection_select :departure_airport, 
