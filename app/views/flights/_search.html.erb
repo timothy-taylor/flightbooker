@@ -1,24 +1,22 @@
-<div class="flex flex-col p-2 bg-purple-100">
-<h1 class="p-4 font-mono text-center">Flights, etc</h1>
-<%= form_with url: flights_path, method: "get", local: true, class: "text-center md:text-left" do |form| %>
-  <h3 class="font-light">Search for Flights:</h3>
+<div class="flex flex-col pt-2 bg-purple-100 border-2 border-solid rounded md:w-1/4">
+  <h1 class="p-4 font-mono text-center">Flights, etc</h1>
+  <%= form_with url: flights_path, method: "get", local: true, class: "text-center " do |form| %>
+    <h3 class="font-light">Search for Flights:</h3>
     <div class="py-2">
       <%= form.label :departure_airport, "Origin:" %>
       <%= form.collection_select :departure_airport, 
-        Airport.order(:city), :id, Proc.new{ |a| a.city }, 
-        include_blank: '' %>
+        Airport.order(:city), :id, Proc.new{ |a| a.city }, include_blank: '' %>
     </div>
 
     <div class="py-2">
       <%= form.label :departure_airport, "Destination:" %>
       <%= form.collection_select :arrival_airport, 
-        Airport.order(:city), :id, Proc.new{ |a| a.city }, 
-        include_blank: '' %>
+        Airport.order(:city), :id, Proc.new{ |a| a.city }, include_blank: '' %>
     </div>
 
-    <div class="py-2 m-2 grid place-items-center">
+    <div class="py-4 m-2">
       <%= form.button("Search flights") %>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 

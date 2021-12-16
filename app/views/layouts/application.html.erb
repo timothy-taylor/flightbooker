@@ -11,10 +11,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="bg-purple-50">
-    <div class="p-4"></div>
-    <div class="container mx-auto">
+  <body class="h-screen bg-purple-50">
+    <div class="hidden p-4 md:block"></div>
+    <main class="container pb-12 mx-auto">
       <%= yield %>
-    </div>
+    </main>
+    <footer class="fixed bottom-0 left-0 right-0 text-center bg-white">
+      <h4 class="p-4 text-sm text-gray-600">2021 TGT</h4>
+    </footer>
   </body>
 </html>
